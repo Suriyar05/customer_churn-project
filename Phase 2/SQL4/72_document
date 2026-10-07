@@ -1,0 +1,9 @@
+ _________________________________________________________________________________________________________________________________________________________
+| Activity | Business Question   | Result                                          |                                                                                                          interpretation                                                                               |
+| -------- | --------------------------------- | --------------------------------- | -------------------------------------------------------------------- |
+| **67**   | Churn rate by contract?           | Month-to-month ≈ 42.71% | Month-to-month is the highest-risk contract.                                   |
+| **68**   | Churn rate by payment method?     | Electronic check ≈ 45.29% | Electronic check has the highest churn.                                      |
+| **69**   | Average monthly charges by churn? | Stayed ≈ $61.27, Churned ≈ $74.44 | Churned customers pay more monthly on average.                       |
+| **70**   | Top risky segment count?          | ≈ 935 | Short-tenure, high-charge month-to-month customers are high risk.                                |
+| **71**   | High-value churned customers?     | ≈ 530, avg tenure ≈ 44.32 months  | A significant group of long-tenure/high-value customers has churned. |
+|__________|___________________________________|___________________________________|______________________________________________________________________|

@@ -1,0 +1,6 @@
+SELECT
+    churn,
+    COUNT(*) AS customer_count
+FROM customer_ml_features
+GROUP BY churn
+ORDER BY churn;

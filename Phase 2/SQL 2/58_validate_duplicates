@@ -1,0 +1,5 @@
+SELECT COUNT(*) AS total_rows
+FROM stg_customer_raw;
+
+SELECT COUNT(DISTINCT customerID) AS distinct_customers
+FROM stg_customer_raw;

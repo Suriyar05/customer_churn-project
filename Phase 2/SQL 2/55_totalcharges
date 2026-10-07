@@ -1,0 +1,4 @@
+SELECT TotalCharges
+FROM stg_customer_raw
+WHERE TotalCharges = ''
+LIMIT 5;

@@ -1,0 +1,6 @@
+
+python -m pip install python-dotenv
+
+python -m pip install fastapi uvicorn sqlalchemy pymysql python-dotenv
+
+ uvicorn main:app --reload

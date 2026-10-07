@@ -1,0 +1,39 @@
+customers:
+  primary_key:
+    - customer_id
+
+contracts:
+  primary_key:
+    - customer_id
+  foreign_key:
+    - customer_id
+  references:
+        table: customers
+        column: customer_id
+
+services:
+  primary_key:
+    - customer_id
+  foreign_key:
+    customer_id:
+      references:
+        table: customers
+        column: customer_id
+
+billing:
+  primary_key:
+    - customer_id
+  foreign_key:
+    customer_id:
+      references:
+        table: customers
+        column: customer_id
+
+customer_status:
+  primary_key:
+    - customer_id
+  foreign_key:
+    customer_id:
+      references:
+        table: customers
+        column: customer_id

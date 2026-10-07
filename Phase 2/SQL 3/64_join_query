@@ -1,0 +1,23 @@
+SELECT
+    c.customer_id,
+    c.gender,
+    c.senior_citizen,
+    c.partner,
+    c.dependents,
+
+    f.tenure,
+    f.monthly_charges,
+    f.total_charges,
+    f.churn,
+
+    dc.contract_name
+
+FROM standardising_customers c
+
+JOIN fact_customer_account f
+    ON c.customer_id = f.customer_id
+
+JOIN dim_contract dc
+    ON f.contract_id = dc.contract_id
+
+LIMIT 10;

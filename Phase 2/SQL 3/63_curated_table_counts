@@ -1,0 +1,21 @@
+SELECT 'dim_contract' AS table_name,
+       COUNT(*) AS row_count
+FROM dim_contract
+
+UNION ALL
+
+SELECT 'dim_payment',
+       COUNT(*)
+FROM dim_payment
+
+UNION ALL
+
+SELECT 'standardising_customers',
+       COUNT(*)
+FROM standardising_customers
+
+UNION ALL
+
+SELECT 'fact_customer_account',
+       COUNT(*)
+FROM fact_customer_account;

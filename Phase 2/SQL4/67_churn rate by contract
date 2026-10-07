@@ -1,0 +1,11 @@
+-- What is the churn rate for each 
+-- contract type, and which contract type has the highest churn?
+
+SELECT
+    dc.contract_name,
+    ROUND(AVG(f.churn) * 100, 2) AS churn_rate_percent
+FROM fact_customer_account f
+JOIN dim_contract dc
+    ON f.contract_id = dc.contract_id
+GROUP BY dc.contract_name
+ORDER BY churn_rate_percent DESC;

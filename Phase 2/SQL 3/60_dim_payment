@@ -1,0 +1,10 @@
+CREATE TABLE dim_payment (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    payment_method VARCHAR(50) NOT NULL UNIQUE
+);
+
+INSERT INTO dim_payment (payment_method)
+SELECT DISTINCT PaymentMethod
+FROM stg_customer_raw
+WHERE PaymentMethod IS NOT NULL
+  AND TRIM(PaymentMethod) <> '';

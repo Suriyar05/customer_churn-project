@@ -1,0 +1,34 @@
+Instead of putting all SQL inside:
+
+@app.get("/churn/summary")
+
+we use:
+
+get_churn_summary(session)
+Route
+
+The route handles HTTP/API responsibilities:
+
+Request
+   ↓
+FastAPI route
+   ↓
+Service function
+   ↓
+Response
+Service
+
+The service handles business/data logic:
+
+get_churn_summary()
+        ↓
+SQL queries
+        ↓
+Calculate/format results
+        ↓
+Return dictionary
+Three-sentence answer for your lab
+
+We use a service layer to separate business
+ logic and database operations from HTTP routing. 
+ This makes the code easier to test, reuse, and maintain because the same get_churn_summary() function can be called from different parts of the application. It also keeps the FastAPI route clean and focused only on handling the request and response.

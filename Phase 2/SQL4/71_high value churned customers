@@ -1,0 +1,9 @@
+-- How many churned customers have total charges greater
+--  than 2000, and what is their average tenure?
+
+SELECT
+    COUNT(*) AS high_value_churned_customers,
+    ROUND(AVG(tenure), 2) AS average_tenure
+FROM fact_customer_account
+WHERE churn = 1
+  AND total_charges > 2000;

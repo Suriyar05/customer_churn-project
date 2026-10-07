@@ -1,0 +1,45 @@
+1.customers
+
+Stores customer identity and demographic information.
+
+customer_id
+gender
+senior_citizen
+partner
+dependents
+2. contracts
+
+Stores subscription/contract information.
+
+customer_id
+tenure
+contract
+3. services
+
+Stores the services subscribed to by the customer.
+
+customer_id
+phone_service
+multiple_lines
+internet_service
+online_security
+online_backup
+device_protection
+tech_support
+streaming_tv
+streaming_movies
+4. billing
+
+Stores payment and charge information.
+
+customer_id
+paperless_billing
+payment_method
+monthly_charges
+total_charges
+5. customer_status
+
+Stores the customer's churn outcome.
+
+customer_id
+churn

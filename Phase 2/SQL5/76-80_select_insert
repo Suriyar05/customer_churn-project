@@ -1,0 +1,91 @@
+INSERT INTO customer_ml_features (
+    customer_id,
+    tenure,
+    monthly_charges,
+    total_charges,
+    contract_name,
+    payment_method,
+    service_count,
+    high_charge_flag,
+    is_long_term_customer,
+    auto_pay_flag,
+    churn
+)
+SELECT
+    f.customer_id,
+
+    COALESCE(f.tenure, 0),
+
+    COALESCE(f.monthly_charges, 0),
+
+    COALESCE(f.total_charges, 0),
+
+    dc.contract_name,
+
+    dp.payment_method,
+
+    /* 77. service_count */
+    (
+        CASE
+            WHEN LOWER(TRIM(f.phone_service)) = 'yes' THEN 1
+            ELSE 0
+        END
+        +
+        CASE
+            WHEN LOWER(TRIM(f.online_security)) = 'yes' THEN 1
+            ELSE 0
+        END
+        +
+        CASE
+            WHEN LOWER(TRIM(f.online_backup)) = 'yes' THEN 1
+            ELSE 0
+        END
+        +
+        CASE
+            WHEN LOWER(TRIM(f.device_protection)) = 'yes' THEN 1
+            ELSE 0
+        END
+        +
+        CASE
+            WHEN LOWER(TRIM(f.tech_support)) = 'yes' THEN 1
+            ELSE 0
+        END
+        +
+        CASE
+            WHEN LOWER(TRIM(f.streaming_tv)) = 'yes' THEN 1
+            ELSE 0
+        END
+    ) AS service_count,
+
+    /* 78. high_charge_flag */
+    CASE
+        WHEN f.monthly_charges > (
+            SELECT AVG(monthly_charges)
+            FROM fact_customer_account
+        )
+        THEN 1
+        ELSE 0
+    END AS high_charge_flag,
+
+    /* 79. is_long_term_customer */
+    CASE
+        WHEN f.tenure >= 24 THEN 1
+        ELSE 0
+    END AS is_long_term_customer,
+
+    /* 80. auto_pay_flag */
+    CASE
+        WHEN LOWER(dp.payment_method) LIKE '%automatic%'
+        THEN 1
+        ELSE 0
+    END AS auto_pay_flag,
+
+    f.churn
+
+FROM fact_customer_account f
+
+JOIN dim_contract dc
+    ON f.contract_id = dc.contract_id
+
+JOIN dim_payment dp
+    ON f.payment_id = dp.payment_id;

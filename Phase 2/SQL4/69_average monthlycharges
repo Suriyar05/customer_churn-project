@@ -1,0 +1,8 @@
+--What is the average monthly charge for customers who churned compared with customers who stayed
+
+SELECT
+    churn,
+    ROUND(AVG(monthly_charges), 2) AS avg_monthly_charges
+FROM fact_customer_account
+GROUP BY churn
+ORDER BY churn;

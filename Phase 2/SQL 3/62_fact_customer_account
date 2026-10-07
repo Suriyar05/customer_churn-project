@@ -1,0 +1,91 @@
+CREATE TABLE fact_customer_account (
+    customer_id VARCHAR(20) PRIMARY KEY,
+    tenure INT,
+    phone_service VARCHAR(10),
+    multiple_lines VARCHAR(30),
+    internet_service VARCHAR(30),
+    online_security VARCHAR(30),
+    online_backup VARCHAR(30),
+    device_protection VARCHAR(30),
+    tech_support VARCHAR(30),
+    streaming_tv VARCHAR(30),
+    streaming_movies VARCHAR(30),
+    contract_id INT,
+    payment_id INT,
+    paperless_billing INT,
+    monthly_charges DECIMAL(10,2),
+    total_charges DECIMAL(12,2),
+    churn INT,
+
+    FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id),
+
+    FOREIGN KEY (contract_id)
+        REFERENCES dim_contract(contract_id),
+
+    FOREIGN KEY (payment_id)
+        REFERENCES dim_payment(payment_id)
+);
+
+
+
+INSERT INTO fact_customer_account (
+    customer_id,
+    tenure,
+    phone_service,
+    multiple_lines,
+    internet_service,
+    online_security,
+    online_backup,
+    device_protection,
+    tech_support,
+    streaming_tv,
+    streaming_movies,
+    contract_id,
+    payment_id,
+    paperless_billing,
+    monthly_charges,
+    total_charges,
+    churn
+)
+SELECT
+    s.customerID,
+    s.tenure,
+    s.PhoneService,
+    s.MultipleLines,
+    s.InternetService,
+    s.OnlineSecurity,
+    s.OnlineBackup,
+    s.DeviceProtection,
+    s.TechSupport,
+    s.StreamingTV,
+    s.StreamingMovies,
+    c.contract_id,
+    p.payment_id,
+
+    CASE
+        WHEN LOWER(TRIM(s.PaperlessBilling)) = 'yes' THEN 1
+        WHEN LOWER(TRIM(s.PaperlessBilling)) = 'no' THEN 0
+        ELSE NULL
+    END,
+
+    CAST(s.MonthlyCharges AS DECIMAL(10,2)),
+
+    CAST(
+        NULLIF(TRIM(s.TotalCharges), '')
+        AS DECIMAL(12,2)
+    ),
+
+    CASE
+        WHEN LOWER(TRIM(s.Churn)) = 'yes' THEN 1
+        WHEN LOWER(TRIM(s.Churn)) = 'no' THEN 0
+        ELSE NULL
+    END
+
+FROM stg_customer_raw s
+
+JOIN dim_contract c
+    ON TRIM(s.Contract) = TRIM(c.contract_name)
+
+JOIN dim_payment p
+    ON TRIM(s.PaymentMethod) = TRIM(p.payment_method);

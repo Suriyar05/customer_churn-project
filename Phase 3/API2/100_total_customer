@@ -1,0 +1,5 @@
+SELECT
+    COUNT(*) AS total_customers,
+    SUM(churn) AS total_churned,
+    AVG(churn) AS churn_rate
+FROM fact_customer_account;

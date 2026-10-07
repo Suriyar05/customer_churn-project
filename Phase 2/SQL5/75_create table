@@ -1,0 +1,13 @@
+CREATE TABLE customer_ml_features (
+    customer_id VARCHAR(20) PRIMARY KEY,
+    tenure INT NOT NULL,
+    monthly_charges FLOAT NOT NULL,
+    total_charges FLOAT,
+    contract_name VARCHAR(30) NOT NULL,
+    payment_method VARCHAR(50) NOT NULL,
+    service_count INT NOT NULL,
+    high_charge_flag INT NOT NULL,
+    is_long_term_customer INT NOT NULL,
+    auto_pay_flag INT NOT NULL,
+    churn INT NOT NULL
+);

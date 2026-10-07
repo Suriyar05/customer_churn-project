@@ -1,0 +1,8 @@
+SELECT
+    dc.contract_name AS contract_type,
+    AVG(f.churn) AS churn_rate
+FROM fact_customer_account f
+JOIN dim_contract dc
+    ON f.contract_id = dc.contract_id
+GROUP BY dc.contract_name
+ORDER BY churn_rate DESC;

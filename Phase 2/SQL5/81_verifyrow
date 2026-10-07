@@ -1,0 +1,20 @@
+SELECT COUNT(*) AS total_rows
+FROM customer_ml_features;
+
+SELECT COUNT(*) AS null_monthly_charges
+FROM customer_ml_features
+WHERE monthly_charges IS NULL;
+
+SELECT
+    SUM(customer_id IS NULL) AS null_customer_id,
+    SUM(tenure IS NULL) AS null_tenure,
+    SUM(monthly_charges IS NULL) AS null_monthly_charges,
+    SUM(total_charges IS NULL) AS null_total_charges,
+    SUM(contract_name IS NULL) AS null_contract,
+    SUM(payment_method IS NULL) AS null_payment,
+    SUM(service_count IS NULL) AS null_service_count,
+    SUM(high_charge_flag IS NULL) AS null_high_charge,
+    SUM(is_long_term_customer IS NULL) AS null_long_term,
+    SUM(auto_pay_flag IS NULL) AS null_auto_pay,
+    SUM(churn IS NULL) AS null_churn
+FROM customer_ml_features;

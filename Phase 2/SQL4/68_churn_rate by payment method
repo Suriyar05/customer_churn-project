@@ -1,0 +1,10 @@
+-- Which payment method has the highest customer churn rate?
+
+SELECT
+    dp.payment_method,
+    ROUND(AVG(f.churn) * 100, 2) AS churn_rate_percent
+FROM fact_customer_account f
+JOIN dim_payment dp
+    ON f.payment_id = dp.payment_id
+GROUP BY dp.payment_method
+ORDER BY churn_rate_percent DESC;

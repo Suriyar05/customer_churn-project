@@ -1,0 +1,6 @@
+SELECT
+    internet_service,
+    AVG(churn) AS churn_rate
+FROM fact_customer_account
+GROUP BY internet_service
+ORDER BY churn_rate DESC;

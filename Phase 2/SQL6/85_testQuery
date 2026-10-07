@@ -1,0 +1,23 @@
+SELECT COUNT(*) AS high_risk_count
+FROM customer_ml_features
+WHERE contract_name = 'Month-to-month'
+  AND tenure < 12
+  AND monthly_charges > (
+      SELECT AVG(monthly_charges)
+      FROM customer_ml_features
+  );
+
+
+  SELECT
+    customer_id,
+    tenure,
+    monthly_charges,
+    contract_name
+FROM customer_ml_features
+WHERE contract_name = 'Month-to-month'
+  AND tenure < 12
+  AND monthly_charges > (
+      SELECT AVG(monthly_charges)
+      FROM customer_ml_features
+  )
+LIMIT 10;

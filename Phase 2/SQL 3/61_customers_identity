@@ -1,0 +1,38 @@
+CREATE TABLE standardising_customers (
+    customer_id VARCHAR(20) PRIMARY KEY,
+    gender VARCHAR(10),
+    senior_citizen INT,
+    partner INT,
+    dependents INT
+);
+
+
+INSERT INTO standardising_customers (
+    customer_id,
+    gender,
+    senior_citizen,
+    partner,
+    dependents
+)
+SELECT
+    customerID,
+    CASE
+        WHEN LOWER(TRIM(gender)) = 'male' THEN 'Male'
+        WHEN LOWER(TRIM(gender)) = 'female' THEN 'Female'
+        ELSE NULL
+    END,
+    CAST(SeniorCitizen AS UNSIGNED),
+    CASE
+        WHEN LOWER(TRIM(Partner)) = 'yes' THEN 1
+        WHEN LOWER(TRIM(Partner)) = 'no' THEN 0
+        ELSE NULL
+    END,
+    CASE
+        WHEN LOWER(TRIM(Dependents)) = 'yes' THEN 1
+        WHEN LOWER(TRIM(Dependents)) = 'no' THEN 0
+        ELSE NULL
+    END
+FROM stg_customer_raw;
+
+SELECT COUNT(*) AS standardising_customers
+FROM customers;

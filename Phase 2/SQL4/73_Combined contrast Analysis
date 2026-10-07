@@ -1,0 +1,12 @@
+-- For each contract type, what are the average monthly charges, average tenure, and churn rate?
+
+SELECT
+    dc.contract_name,
+    ROUND(AVG(f.monthly_charges), 2) AS avg_monthly_charges,
+    ROUND(AVG(f.tenure), 2) AS avg_tenure,
+    ROUND(AVG(f.churn) * 100, 2) AS churn_rate_percent
+FROM fact_customer_account f
+JOIN dim_contract dc
+    ON f.contract_id = dc.contract_id
+GROUP BY dc.contract_name
+ORDER BY churn_rate_percent DESC;

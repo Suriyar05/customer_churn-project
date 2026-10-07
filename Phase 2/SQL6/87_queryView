@@ -1,0 +1,3 @@
+SELECT *
+FROM v_high_risk_customers
+LIMIT 10;

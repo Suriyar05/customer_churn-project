@@ -1,0 +1,45 @@
+2026-08-19 12:06:34,796 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:06:34,801 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:06:34,808 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:06:34,808 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:06:34,808 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-19 12:11:11,550 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:11:11,554 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:11:11,564 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:11:11,565 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:11:11,565 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-19 12:17:37,558 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:17:37,565 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:17:37,574 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:17:37,575 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:17:37,576 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-19 12:18:42,362 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:18:42,372 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:18:42,382 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:18:42,382 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:18:42,383 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-19 12:20:23,803 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:20:23,808 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:20:23,815 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:20:23,815 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:20:23,815 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-19 12:21:56,229 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:21:56,233 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:21:56,239 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:21:56,239 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:21:56,239 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-19 12:22:32,743 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:22:32,748 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:22:32,761 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:22:32,763 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:22:32,763 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-19 12:25:36,206 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-19 12:25:36,210 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-19 12:25:36,216 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-19 12:25:36,216 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-19 12:25:36,216 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-21 15:11:33,787 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-21 15:11:33,795 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-21 15:11:33,812 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-21 15:11:33,813 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-21 15:11:33,813 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)

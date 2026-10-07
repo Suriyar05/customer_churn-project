@@ -1,0 +1,29 @@
+-- How many customers have a month-to-month contract, less than 12 months of tenure, and monthly charges above the overall average?
+
+SELECT
+    COUNT(*) AS risky_customer_count
+FROM fact_customer_account f
+JOIN dim_contract dc
+    ON f.contract_id = dc.contract_id
+WHERE dc.contract_name = 'Month-to-month'
+  AND f.tenure < 12
+  AND f.monthly_charges > (
+      SELECT AVG(monthly_charges)
+      FROM fact_customer_account
+  );
+
+SELECT
+    f.customer_id,
+    f.tenure,
+    f.monthly_charges,
+    dc.contract_name
+FROM fact_customer_account f
+JOIN dim_contract dc
+    ON f.contract_id = dc.contract_id
+WHERE dc.contract_name = 'Month-to-month'
+  AND f.tenure < 12
+  AND f.monthly_charges > (
+      SELECT AVG(monthly_charges)
+      FROM fact_customer_account
+  )
+ORDER BY f.monthly_charges DESC;

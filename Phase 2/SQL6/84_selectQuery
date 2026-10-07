@@ -1,0 +1,16 @@
+SELECT
+    customer_id,
+    tenure,
+    monthly_charges,
+    contract_name,
+    CONCAT(
+        'Month-to-month contract, tenure < 12 months, ',
+        'monthly charges above dataset average'
+    ) AS risk_reason
+FROM customer_ml_features
+WHERE contract_name = 'Month-to-month'
+  AND tenure < 12
+  AND monthly_charges > (
+      SELECT AVG(monthly_charges)
+      FROM customer_ml_features
+  );

@@ -1,0 +1,13 @@
+| Column                  | Type        | Purpose                       |
+| ----------------------- | ----------- | ----------------------------- |
+| `customer_id`           | VARCHAR(20) | Customer identifier           |
+| `tenure`                | INT         | Customer tenure               |
+| `monthly_charges`       | FLOAT       | Monthly charges               |
+| `total_charges`         | FLOAT       | Total charges                 |
+| `contract_name`         | VARCHAR(30) | Contract category             |
+| `payment_method`        | VARCHAR(50) | Payment category              |
+| `service_count`         | INT         | Number of subscribed services |
+| `high_charge_flag`      | INT         | Above-average monthly charge  |
+| `is_long_term_customer` | INT         | Tenure >= 24 months           |
+| `auto_pay_flag`         | INT         | Automatic payment indicator   |
+| `churn`                 | INT         | ML target label               |

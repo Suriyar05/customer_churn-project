@@ -1,0 +1,2 @@
+SELECT AVG(monthly_charges)
+FROM customer_ml_features;

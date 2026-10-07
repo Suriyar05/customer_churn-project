@@ -1,0 +1,12 @@
+CREATE TABLE dim_contract (
+    contract_id INT AUTO_INCREMENT PRIMARY KEY,
+    contract_name VARCHAR(30) NOT NULL UNIQUE
+);
+
+INSERT INTO dim_contract (contract_name)
+VALUES
+    ('Month-to-month'),
+    ('One year'),
+    ('Two year');
+
+SELECT * FROM dim_contract;

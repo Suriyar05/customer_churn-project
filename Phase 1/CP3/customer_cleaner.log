@@ -1,0 +1,10 @@
+2026-08-07 12:15:10,133 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 12:15:10,148 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 12:15:10,166 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 12:15:10,167 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 12:15:10,167 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 12:15:27,926 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 12:15:27,939 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 12:15:27,974 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 12:15:27,976 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 12:15:27,977 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
